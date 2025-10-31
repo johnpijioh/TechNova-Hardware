@@ -1,0 +1,201 @@
+/* --- Fase 1: Fundação e Estrutura --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap');
+
+:root {
+    --cor-primaria: #007bff;
+    --cor-secundaria: #1a2533;
+    --cor-texto: #333;
+    --cor-fundo: #f4f7f6;
+    --cor-light: #ffffff;
+
+    --fonte-titulo: 'Poppins', sans-serif;
+    --fonte-corpo: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+    padding-top: 80px; /* Espaço para o header fixo */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Fixo */
+.header {
+    background-color: var(--cor-light);
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.nav-principal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-principal a {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Rodapé */
+.footer {
+    background-color: var(--cor-secundaria);
+    color: #ccc;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+/* Barra de Cookies (Fase 1) */
+.cookie-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1001;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.cookie-bar.active {
+    transform: translateY(0);
+}
+
+.cookie-bar p {
+    margin: 0;
+}
+
+.btn {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* --- Fase 2: Componente Card de Produto --- */
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card-produto {
+    background-color: var(--cor-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    position: relative; /* Para o hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card-produto-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-produto-info {
+    padding: 1rem;
+}
+
+.card-produto-info h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.card-produto-preco {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    margin-bottom: 0.5rem;
+}
+
+.card-produto-avaliacao {
+    color: #f39c12; /* Estrelas */
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Ações de Hover (Jornada Fase 1) */
+.card-produto-acoes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0.9));
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card-produto:hover .card-produto-acoes {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.btn-detalhes {
+    background-color: var(--cor-light);
+    color: var(--cor-primaria);
+    border: 1px solid var(--cor-primaria);
+}
+.btn-detalhes:hover {
+    background-color: #f0f8ff;
+}
