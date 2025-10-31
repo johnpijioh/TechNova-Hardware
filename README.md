@@ -1,9 +1,9 @@
 # TechNova Hardware
 ## A Plataforma Definitiva de E-commerce para Hardware
 
-[![Status do Projeto](https://img.shields.io/badge/Status-EM%20DESENVOLVIMENTO-yellow)](#[Link do Board])
-[![Stack Principal](https://img.shields.io/badge/Stack-Node%2FExpress%20%7C%20MongoDB-green)](#[Link para o Repositório])
-[![Versão Atual](https://img.shields.io/badge/Commit-Base%20API%20%26%20UI-informational)](#[Link para o Último Commit])
+[![Status do Projeto](https://img.shields.io/badge/Status-EM%20DESENVOLVIMENTO-yellow)]
+[![Stack Principal](https://img.shields.io/badge/Stack-Node%2FExpress%20%7C%20MongoDB-green)]
+[![Versão Atual](https://img.shields.io/badge/Commit-Base%20API%20%26%20UI-informational)]
 [![Licença](https://img.shields.io/badge/Licença-ISC-blue)](LICENSE)
 
 ---
